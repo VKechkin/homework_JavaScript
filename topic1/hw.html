@@ -65,6 +65,23 @@
 		и далее любые действия с NaN всегда дают NaN
 		*/
 		alert(result5);
+
+		let age = Namber(prompt("Введите ваш возвраст"));
+		if (age < 18) {
+			alert("Вам скидка 10%");
+		} else if (age >= 18 && age < 60) {
+			alert("Вам скидка 20%");
+		} else if (age > 60) {
+			alert("Вам скидка 30%")
+		} else {
+			alert("Нет такого возвраста")
+		}
+		let result = true ?‘значение 1’ : ‘значение 2’;
+		console.log(result);
+		let constantClient = confirm("Вы постоянный клиент");
+		let discount = constantClient ? 30 : 10;
+		alert("Ваша скидка ${discount}");
+
 	</script>
 </body>
 
