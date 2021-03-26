@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		'use strict';
+		/*5.Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+		где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от
+		переданного значения операции (использовать switch) выполнить одну из арифметических операций
+		(использовать функции из задания 4) и вернуть полученное значение.
+		*/
+		let arg1 = Number(prompt("Введите первый аргумент"));
+		let arg2 = Number(prompt("Введите второй аргумент"));
+		let operation = prompt("Введите название одной из операций: getSum, getSubtraction, getDivide, getMultiplication");
+
+		function getSum(a, b) {
+			let sum = a + b;
+			return `Если сложить два числа получится: ${sum}`;
+		}
+		function getSubtraction(a, b) {
+			let subtraction = a - b;
+			return `Если вычесть числа получится: ${subtraction}`;
+		}
+		function getDivide(a, b) {
+			let divide = a / b;
+			return `Если разделить числа получится: ${divide}`;
+		}
+		function getMultiplication(a, b) {
+			let multiplication = a * b;
+			return `Если умножить числа получится: ${multiplication}`;
+		}
+
+		function mathOperation(arg1, arg2, operation) {
+			switch (operation) {
+				case "getSum":
+					getSum(arg1, arg2);
+					break;
+				case "getSubtraction":
+					getSubtraction(arg1, arg2);
+					break;
+				case "getDivide":
+					getDivide(arg1, arg2);
+					break;
+				case "getMultiplication":
+					getMultiplication(arg1, arg2);
+					break;
+			}
+		}
+
+		mathOperation(arg1, arg2, operation);
+
+	</script>
+</body>
+
+</html>

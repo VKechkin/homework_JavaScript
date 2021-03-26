@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		'use strict';
+		/*5.Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+		где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от
+		переданного значения операции (использовать switch) выполнить одну из арифметических операций
+		(использовать функции из задания 4) и вернуть полученное значение.
+		*/
+		let num = String(parseInt(prompt("Ведите сумму в рублях которую вы хотите положить на счет в банк")));
+		let lastNum = num.charAt(num.length - 1); // Узнаю символ последнего по индексу
+		let beforeLastNum = num.charAt(num.length - 2); // Узнаю символ предпоследнего по индексу
+
+		alert(`Ваша сумма в ${num} ${showMoney(num)} успешно зачислена.`);
+
+		function showMoney(num) {
+			if (beforeLastNum == 1) {
+				return "рублей";
+			} else if (lastNum == 1) {
+				return "рубль";
+			}
+			switch (lastNum) {
+				case "0":
+				case "5":
+				case "6":
+				case "7":
+				case "8":
+				case "9":
+					return "рублей";
+			}
+			switch (lastNum) {
+				case "2":
+				case "3":
+				case "4":
+					return "рубля";
+			}
+
+		}
+
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		'use strict';
+		/*4.Реализовать основные 4 арифметические операции (+, -, /, *) в виде функций с двумя параметрами. 
+		Т.е. например, функция для сложения должна принимать два числа, складывать их и возвращать результат.
+		Обязательно использовать оператор return.
+		*/
+		let num1 = Number(prompt("Введите положительное число от 0 до 100"));
+		let num2 = Number(prompt("Введите положительное число от 0 до 100"));
+
+		function getSum(a, b) {
+			let sum = a + b;
+			return `Если сложить два числа получится: ${sum}`;
+		}
+		function getSubtraction(a, b) {
+			let subtraction = a - b;
+			return `Если вычесть числа получится: ${subtraction}`;
+		}
+		function getDivide(a, b) {
+			let divide = a / b;
+			return `Если разделить числа получится: ${divide}`;
+		}
+		function getMultiplication(a, b) {
+			let multiplication = a * b;
+			return `Если умножить числа получится: ${multiplication}`;
+		}
+		getSum(num1, num2);
+		getSubtraction(num1, num2);
+		getDivide(num1, num2);
+		getMultiplication(num1, num2);
+	</script>
+</body>
+
+</html>
