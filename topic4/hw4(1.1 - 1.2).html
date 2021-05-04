@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+
+		'use strict';
+
+		//Задание 1.1 es5
+
+		function Product(name, price) {
+			this.name = name;
+			this.price = price;
+		}
+
+		Product.prototype.make25PercentDiscount = function () {
+			this.price = this.price - (this.price * 25 / 100);
+		}
+
+		//Задание 1.1 es6
+
+		class Product {
+			constructor(name, price) {
+				this.name = name;
+				this.price = price;
+			}
+
+			make25PercentDiscount(discount) {
+				this.price = this.price - (this.price * 25 / 100);
+			}
+		}
+
+		//Задание 1.2 es5
+
+		function Post(author, text, date) {
+			this.author = author;
+			this.text = text;
+			this.date = date;
+		}
+
+		Post.prototype.edit = function (text) {
+			this.text = text;
+		};
+
+		function AttachedPost(author, text, date) {
+			Post.call(this, author);
+			Post.call(this, text);
+			Post.call(this, date);
+			this.highlighted = false;
+		}
+
+		AttachedPost.prototype = Object.create(Post.prototype);
+		AttachedPost.prototype.constructor = AttachedPost;
+
+		AttachedPost.prototype.makeTextHighlighted = function () {
+			this.highlighted = true;
+		};
+
+
+		//Задание 1.2 es6
+
+		class Post {
+			constructor(author, text, date) {
+				this.author = author;
+				this.text = text;
+				this.date = date;
+			}
+
+			function(text) {
+				this.text = text;
+			};
+		}
+
+		class AttachedPost extends Post {
+			constructor(author, text, date) {
+				super(author);
+				super(text);
+				super(date);
+				this.highlighted = false;
+			}
+
+			makeTextHighlighted() {
+				this.highlighted = true;
+			}
+		}
+
+
+
+	</script>
+</body>
+
+</html>
