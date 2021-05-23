@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+
+		'use strict';
+
+		let number = prompt('Введите число от 0 до 999');
+		let numObject = {};
+		let numArray = null;
+		function getNum(number) {
+			if (number < 0) {
+				console.log('Вы ввели число меньше 0 !');
+				return numObject;
+			} else if (number > 999) {
+				console.log('Вы ввели число больше 999 !');
+				return numObject;
+			} else if (isNaN(number)) {
+				console.log('Вы ввели не число !');
+				return numObject;
+			} else if (!Number.isInteger(Number(number))) {
+				console.log('Вы ввели не целое число !');
+				return numObject;
+			} else {
+				numArray = number.split('');
+				numObject.units = numArray[2];
+				numObject.tens = numArray[1];
+				numObject.hundreds = numArray[0];
+
+			}
+		}
+
+		console.log(numObject);
+		getNum(number);
+	</script>
+</body>
+
+</html>
